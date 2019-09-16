@@ -2,12 +2,15 @@ def Unmanned(L, N, track):
     current_point = track[0][0]
     current_time = track[0][0]
 
+    if current_time >= L:
+        return L
+
     for i in range(len(track)):
         current_time += track[i][0] - current_point
         n = current_time
         red = True
         for j in range(track[i][0] // 2 + 1):
-            if n - track[i][1] <= 0:
+            if n - track[i][1] < 0:
                 n = -(n - track[i][1])
                 break
             elif n - track[i][1] - track[i][2] >= 0:
