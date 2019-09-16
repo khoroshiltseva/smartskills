@@ -7,7 +7,7 @@ def Unmanned(L, N, track):
         n = current_time
         red = True
         for j in range(track[i][0] // 2 + 1):
-            if n - track[i][1] < 0:
+            if n - track[i][1] <= 0:
                 n = -(n - track[i][1])
                 break
             elif n - track[i][1] - track[i][2] >= 0:
