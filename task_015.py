@@ -1,8 +1,12 @@
 def LineAnalysis(line):
+
     line_arr = list(line)
 
     if "." in line_arr == False:
         return True
+
+    if line_arr[0] != "*":
+        return False
 
     stars = ""
     stars_arr = []
@@ -17,7 +21,7 @@ def LineAnalysis(line):
     stars_arr.append(stars)
 
     stars = stars_arr[0]
-    for i in range(1, len(stars_arr)):
+    for i in range(len(stars_arr)):
         if stars_arr[i] != stars:
             return False
 
@@ -36,8 +40,9 @@ def LineAnalysis(line):
         return False
 
     dots = dots_arr[0]
-    for i in range(1, len(dots_arr)):
+    for i in range(len(dots_arr)):
         if dots_arr[i] != dots:
             return False
 
     return True
+
