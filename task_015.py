@@ -2,7 +2,7 @@ def LineAnalysis(line):
 
     line_arr = list(line)
 
-    if "." in line_arr == False:
+    if "." not in line_arr:
         return True
 
     if line_arr[0] != "*":
@@ -45,4 +45,3 @@ def LineAnalysis(line):
             return False
 
     return True
-
